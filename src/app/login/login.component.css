@@ -1,0 +1,18 @@
+form{
+    background-color: rgb(235, 233, 228);
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px 1px black;
+    padding: 20px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+.icons div a i{
+    color: white;
+    margin-right: 5px;
+}
+.fa-facebook{
+    padding: 3px 7px;
+}
+.icons a{
+    cursor: pointer;
+}

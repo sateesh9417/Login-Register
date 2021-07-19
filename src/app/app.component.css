@@ -1,0 +1,11 @@
+a{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+ul li{
+    padding-right: 30px;
+}
+.navbar-brand{
+    padding-left: 25px;
+}

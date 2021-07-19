@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="col-5 m-md-auto">
+        <form action="" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+            <legend class="text-center"><b>Register-Form</b></legend>
+            <div class="form-group">
+                <label for="firstname" class="form-label">Firstname:</label>
+                <input type="text" id="firstname" [class.is-valid]="firstname.touched && firstname.valid" formControlName="firstname" class="form-control" placeholder="enter your firstname...">
+                <div class="alert alert-danger" *ngIf="firstname.errors && firstname.touched">
+                    <div *ngIf="firstname.errors.required">This field is required</div>
+                    <div *ngIf="firstname.errors.minlength">This field requires min 3 chars</div>
+                    <div *ngIf="firstname.errors.pattern">Please match the pattern and numbers are not allowed only alphabets</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="form-label">Lastname:</label>
+                <input type="text" id="lastname" formControlName="lastname" [class.is-valid]="lastname.touched && lastname.valid" class="form-control" placeholder="enter your lastname...">
+                <div class="alert alert-danger" *ngIf="lastname.errors && lastname.touched">
+                    <div *ngIf="lastname.errors.required">This field is required</div>
+                    <div *ngIf="lastname.errors.minlength">This field requires min 3 chars</div>
+                    <div *ngIf="lastname.errors.pattern">Please match the pattern and numbers are not allowed only alphabets</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" id="username" [class.is-valid]="username.touched && username.valid" formControlName="username" class="form-control" placeholder="enter your username...">
+                <div class="alert alert-danger" *ngIf="username.errors && username.touched">
+                    <div *ngIf="username.errors.required">This field is required</div>
+                    <div *ngIf="username.errors.minlength">This field requires min 3 chars</div>
+                    <div *ngIf="username.errors.pattern">Please match the pattern and numbers are not allowed only alphabets</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" formControlName="email" [class.is-valid]="email.touched && email.valid" class="form-control" placeholder="enter your eamil...">
+                <div class="alert alert-danger" *ngIf="email.errors && email.touched">
+                    <div *ngIf="email.errors.required">This field is required</div>
+                    <div *ngIf="email.errors.pattern">Please match the email pattern</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" id="password" [class.is-valid]="password.touched && password.valid" formControlName="password" class="form-control" placeholder="enter valid password...">
+                <div class="alert alert-danger" *ngIf="password.errors && password.touched">
+                    <div *ngIf="password.errors.required">This field is required</div>
+                    <div *ngIf="password.errors.minlength">This field requires min 3 chars</div>
+                    <div *ngIf="password.errors.pattern">Please match the pattern and numbers are not allowed only alphabets</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="role">Role:</label>
+               <select name="role" id="role" class="form-control" required formControlName="role">
+                <option value="admin">Admin</option>
+               <option value="user">User</option>
+               </select>
+            </div>
+            <div class="form-group w-75 m-auto">
+                <button class="btn btn-primary">reset</button>
+                <button class="btn btn-success float-right" [disabled]="registerForm.invalid">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
